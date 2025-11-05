@@ -25,9 +25,8 @@
 
   environment.systemPackages = with pkgs; [
     greetd.tuigreet
-    dolphin
     wofi
-    xwaylandvideobridge
+    kdePackages.xwaylandvideobridge
     (firefox-wayland.override {nativeMessagingHosts = [inputs.pipewire-screenaudio.packages.${pkgs.system}.default];})
     (chromium.override {
       commandLineArgs = [
@@ -65,8 +64,8 @@
 
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    #    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     withUWSM = true;
     xwayland.enable = true;
   };

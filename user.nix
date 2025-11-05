@@ -15,6 +15,16 @@
     ];
     shell = pkgs.fish;
   };
+  users.users.luke = {
+    isNormalUser = true;
+    description = "luke";
+    hashedPassword = "$y$j9T$LPJ53nJ9NA6ZlffHHiPc1/$LwcNqFHTSWTbc8YeTa0WftmfdkImVPsNSIQiczi3yUC";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    shell = pkgs.fish;
+  };
   programs.fish.enable = true;
 
   programs.nix-ld.enable = true;

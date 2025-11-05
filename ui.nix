@@ -40,6 +40,7 @@
       };
     };
     targets = {
+      nvf.enable = false;
       chromium.enable = true;
       fish.enable = true;
       gtk.enable = true;

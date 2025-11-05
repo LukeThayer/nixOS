@@ -9,9 +9,10 @@
     settings = import ./nvim.nix;
   };
 
-  home-manager = {
+  home-manager = rec {
     useUserPackages = true;
     useGlobalPkgs = true;
+    users.luke = users.zach;
     users.zach = {pkgs, ...}: {
       home.stateVersion = "24.11";
       home.sessionVariables = {};
@@ -20,6 +21,7 @@
         webcord
         alacritty
         spotify
+        discord
         liquidctl
         systemctl-tui
         udisks
@@ -73,9 +75,10 @@
         };
         git = {
           enable = true;
+          lfs.enable = true;
           package = pkgs.gitAndTools.gitFull;
-          userName = "Zachry Thayer";
-          userEmail = "zachthayer@gmail.com";
+          userName = "Luke Thayer";
+          userEmail = "lukemanthayer@gmail.com";
           extraConfig = {
             core.editor = "nvim";
           };
