@@ -21,7 +21,9 @@
         webcord
         alacritty
         spotify
+        obsidian
         discord
+        prismlauncher
         liquidctl
         systemctl-tui
         udisks
