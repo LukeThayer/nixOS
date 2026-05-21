@@ -41,6 +41,7 @@
   boot.kernelParams = [
     "pcie_port_pm=off"
     "pcie_aspm=performance"
+    "nvidia_drm.fbdev=1"
   ];
   boot.extraModulePackages = [];
 

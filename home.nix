@@ -9,15 +9,14 @@
     settings = import ./nvim.nix;
   };
 
-  home-manager = rec {
+  home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    users.luke = users.zach;
-    users.zach = {pkgs, ...}: {
+    users.luke = {pkgs, ...}: {
       home.stateVersion = "24.11";
       home.sessionVariables = {};
       home.packages = with pkgs; [
-        inputs.nix-warez.packages.x86_64-linux.blender_4_2
+        blender
         webcord
         alacritty
         spotify
@@ -63,7 +62,7 @@
         home-manager.enable = true;
         fish = {
           enable = true;
-          interactiveShellInit = "fish_add_path /home/zach/.local/bin:$PATH";
+          interactiveShellInit = "fish_add_path /home/luke/.local/bin:$PATH";
           shellAliases = {
             dev = "nix develop --command bash -c \"nvim ./\"";
             jfu = "sudo journalctl -fu";
@@ -73,12 +72,11 @@
         tmux = {
           enable = true;
           terminal = "screen-256color";
-          shell = "/etc/profiles/per-user/zthayer/bin/fish";
+          shell = "/etc/profiles/per-user/luke/bin/fish";
         };
         git = {
           enable = true;
           lfs.enable = true;
-          package = pkgs.gitAndTools.gitFull;
           userName = "Luke Thayer";
           userEmail = "lukemanthayer@gmail.com";
           extraConfig = {

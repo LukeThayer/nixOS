@@ -1,11 +1,10 @@
 {...}: {
   imports = [
-    ./hardware/zgamer.nix
+    ./hardware/luke.nix
     ./user.nix
     ./home.nix
     ./wireless.nix
     ./gaming.nix
-    ./wireless.nix
     ./cooler.nix
     ./ui.nix
     ./audio.nix
@@ -14,5 +13,5 @@
 
   networking.firewall.allowedUDPPorts = [63436];
   nixpkgs.config.allowUnfree = true;
-  networking.hostName = "zgamer";
+  networking.hostName = "luke";
 }

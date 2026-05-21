@@ -30,7 +30,7 @@
     defaultSession = "none+i3";
     # Enable automatic login for the user.
     autoLogin.enable = true;
-    autoLogin.user = "zach";
+    autoLogin.user = "luke";
   };
 
 }

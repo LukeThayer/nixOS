@@ -5,16 +5,6 @@
   services.avahi.enable = true;
   services.openssh.enable = true;
 
-  users.users.zach = {
-    isNormalUser = true;
-    description = "zach";
-    hashedPassword = "$y$j9T$LPJ53nJ9NA6ZlffHHiPc1/$LwcNqFHTSWTbc8YeTa0WftmfdkImVPsNSIQiczi3yUC";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    shell = pkgs.fish;
-  };
   users.users.luke = {
     isNormalUser = true;
     description = "luke";
