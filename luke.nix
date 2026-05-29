@@ -13,5 +13,10 @@
 
   networking.firewall.allowedUDPPorts = [63436];
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [
+    (final: prev: {
+      openldap = prev.openldap.overrideAttrs (_: { doCheck = false; });
+    })
+  ];
   networking.hostName = "luke";
 }

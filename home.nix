@@ -12,10 +12,12 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
+    backupFileExtension = "hm-backup";
     users.luke = {pkgs, ...}: {
       home.stateVersion = "24.11";
       home.sessionVariables = {};
       home.packages = with pkgs; [
+        claude-code
         blender
         webcord
         alacritty
@@ -27,7 +29,6 @@
         systemctl-tui
         udisks
         helix
-        lunarvim
         alacritty
         fd
         unzip
